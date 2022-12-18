@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <form action="./upload.php" method="post" enctype="multipart/form-data">
+       <div id="drop-zone" style="border: 1px solid; padding: 30px;">
+           <p>ファイルをドラッグ＆ドロップもしくは</p>
+           <input file type="file" onchange='gameInstance.SendMessage("GameObject", "FileSelected", window.URL.createObjectURL(this.files[0]));' /> 
+      </div>
+    </form>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1920 height=1200></canvas>
       <div id="unity-loading-bar">
